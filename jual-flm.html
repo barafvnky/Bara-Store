@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barra Fvnky Remix Store – Jual FLM</title>
+
+  <!-- ======= SEO & Social (ditambahkan tanpa menghapus konten lain) ======= -->
+  <meta name="description" content="Daftar FLM (projek FL Studio Mobile) dari Barra Fvnky Remix Store — lengkap dengan preview, harga, dan tombol pembelian. FLM siap diimport ke FL Studio Mobile. Hubungi WA untuk bantuan.">
+  <meta name="keywords" content="FLM, FL Studio Mobile, Jual FLM, Projek FLM, Barra Fvnky Remix Store, Beat, Musik, Beli FLM" />
+  <meta name="author" content="Barra Fvnky Store" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://muslihfvnkyshop.my.id/jual-flm.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Barra Fvnky Remix Store – Jual FLM" />
+  <meta property="og:description" content="Daftar FLM (projek FL Studio Mobile) dari Barra Fvnky Remix Store — lihat preview, harga, dan langsung beli lewat tombol pembayaran atau WA." />
+  <meta property="og:image" content="https://i.imgur.com/ghNd4So.jpeg" />
+  <meta property="og:url" content="https://muslihfvnkyshop.my.id/jual-flm.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Muslih Fvnky Shop – Jual FLM" />
+  <meta name="twitter:description" content="Daftar FLM (projek FL Studio Mobile) — preview & harga tersedia. Hubungi WA untuk pembelian." />
+  <meta name="twitter:image" content="https://i.imgur.com/ghNd4So.jpeg" />
+  <!-- =================================================================== -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('https://i.imgur.com/p0K2KQs.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Styling spesial untuk Request FLM */
+    .special-card {
+      border: 2px solid #0FFCBE;
+      box-shadow: 0 10px 30px rgba(15, 252, 190, 0.18);
+      transform: translateY(-4px);
+    }
+    .special-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #0FFCBE;
+      color: #000;
+      border-radius: 999px;
+      margin-left: 8px;
+    }
+
+    /* small tweak agar background gelap tapi blur sedikit di mobile */
+    .overlay-card {
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+    }
+
+    /* Popular badges */
+    .popular-badge {
+      display:inline-block;
+      background: linear-gradient(90deg,#ffd24d,#ffb84d);
+      color:#222;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:0.85rem;
+      box-shadow:0 6px 12px rgba(0,0,0,0.25);
+    }
+
+    /* Custom player styles */
+    .player-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .player-controls .time {
+      min-width: 48px;
+      font-size: 0.85rem;
+      color: #d5fff0;
+      text-align: center;
+    }
+    .player-controls .progress {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #0FFCBE 0%, rgba(15,110,190,0.25) 0%);
+      outline: none;
+      cursor: pointer;
+    }
+    /* track in Firefox */
+    .player-controls .progress::-moz-range-track {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+    }
+    .player-controls .progress::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+    }
+    .player-controls .progress::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #0FFCBE;
+      box-shadow: 0 0 8px rgba(15,252,190,0.8);
+      margin-top: -5px;
+    }
+    .player-controls .progress::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #0FFCBE;
+      box-shadow: 0 0 8px rgba(15,252,190,0.8);
+      border: none;
+    }
+
+    /* skip buttons */
+    .skip-btn {
+      min-width: 44px;
+      height: 32px;
+      border-radius: 10px;
+      border: 1px solid rgba(15,252,190,0.85);
+      background: rgba(16,110,190,0.9);
+      color: #dffbf2;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      padding: 0 8px;
+    }
+    .skip-btn:hover {
+      background: #0FFCBE;
+      color: #001827;
+    }
+
+    /* Popular section styles */
+    #popular-section { margin-bottom: 18px; }
+    #popular-grid { display:flex; gap:12px; overflow:auto; padding-bottom:8px; }
+    .popular-card { min-width:230px; max-width:260px; background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06)); padding:12px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.45); display:flex; gap:12px; align-items:flex-start; flex-shrink:0; }
+    .popular-card img{ width:64px; height:64px; object-fit:cover; border-radius:10px; flex:0 0 64px; }
+    .popular-meta{ flex:1; }
+    .popular-meta .title{ font-weight:800; color:#fff; }
+    .popular-meta .price{ color:#bfeee0; margin-top:6px; font-weight:700;}
+    .popular-meta .count{ margin-top:6px; color:#ffd; font-size:0.9rem; opacity:0.95; }
+
+    /* FILTER PANEL */
+    #filter-toggle { min-width:120px; }
+    #filter-panel {
+      position: fixed;
+      right: 14px;
+      top: 90px;
+      width: 250px;
+      max-width: calc(100% - 40px);
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      border: 1px solid rgba(15,252,190,0.12);
+      backdrop-filter: blur(6px);
+      z-index: 1200;
+      display: none;
+    }
+    #filter-panel h4 { font-weight:800; margin-bottom:6px; color:#e6fff7; }
+    #filter-panel label { display:block; margin:6px 0; color:#dffbf2; font-weight:600; }
+    #filter-panel input[type="radio"], #filter-panel input[type="checkbox"] { margin-right:8px; }
+
+    /* CART PANEL */
+    #cart-toggle { position:relative; }
+    #cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background: #ff4d6d;
+      color: white;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 2px 6px;
+      font-size: 0.75rem;
+    }
+    #cart-panel {
+      position: fixed;
+      right: 14px;
+      top: 360px;
+      width: 320px;
+      max-width: calc(100% - 40px);
+      background: rgba(0,0,0,0.85);
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      border: 1px solid rgba(15,252,190,0.12);
+      backdrop-filter: blur(6px);
+      z-index: 1300;
+      display: none;
+      color: #e6fff7;
+    }
+    #cart-panel h4 { font-weight:800; margin-bottom:8px; }
+    #cart-items { max-height: 260px; overflow:auto; margin-bottom:8px; }
+    .cart-item { display:flex; gap:8px; align-items:center; justify-content:space-between; padding:6px 4px; border-bottom:1px solid rgba(255,255,255,0.03); }
+    .cart-item .meta { flex:1; }
+    .qty-controls button { padding:4px 8px; border-radius:6px; background:#0FFCBE; color:#001827; font-weight:700; margin-left:6px; }
+
+    /* small responsive tweak */
+    @media (max-width: 480px) {
+      .player-controls .time { min-width: 40px; font-size: 0.75rem; }
+      .player-controls .progress { height: 7px; }
+      .skip-btn { min-width: 38px; height: 28px; font-size: 0.75rem; }
+      #popular-grid { gap:10px; }
+      .popular-card { min-width:200px; }
+      #filter-panel { right: 10px; top: 120px; width: 220px; }
+      #cart-panel { right: 10px; top: 420px; width: 260px; }
+    }
+    
+    /* ===== PERBAIKAN LAYOUT TOMBOL ===== */
+
+/* Container utama kartu produk - FIXED */
+#produk-grid li {
+  display: flex;
+  flex-direction: column; /* Ubah ke kolom agar lebih mudah kontrol */
+  gap: 12px;
+  padding: 16px;
+}
+
+/* Container gambar dan konten */
+.product-content-wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Gambar produk - ukuran fixed */
+.product-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Konten teks - mengambil sisa space */
+.product-text-content {
+  flex: 1;
+  min-width: 0; /* Penting: mencegah overflow */
+}
+
+/* Nama produk - ellipsis jika terlalu panjang */
+.product-title {
+  font-weight: 800;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Harga */
+.product-price {
+  color: #0FFCBE;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+/* ===== CONTAINER TOMBOL YANG RAPIH ===== */
+.product-buttons-container {
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* Grid untuk tombol - SOLUSI UTAMA */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+/* Atau alternatif flexbox yang lebih aman */
+.button-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
+  overflow: hidden; /* Pastikan tidak overflow */
+}
+
+/* Tombol dalam container grid */
+.grid-btn {
+  padding: 10px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 42px;
+}
+
+/* Warna tombol */
+.btn-play {
+  background: linear-gradient(135deg, #0FFCBE, #0BC9AD);
+  color: #001827;
+}
+
+.btn-buy {
+  background: linear-gradient(135deg, #106EBE, #0A5CA3);
+  color: white;
+}
+
+.btn-cart {
+  background: linear-gradient(135deg, #FFD24D, #FFB84D);
+  color: #001827;
+}
+
+/* Hover effects */
+.grid-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Untuk tombol dengan ikon saja di mobile */
+.grid-btn .icon-only {
+  display: none;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 640px) {
+  /* Layout kartu lebih kompak */
+  #produk-grid li {
+    padding: 12px;
+  }
+  
+  .product-image {
+    width: 70px;
+    height: 70px;
+  }
+  
+  /* Tombol lebih kecil di mobile */
+  .button-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  
+  .grid-btn {
+    font-size: 0.8rem;
+    padding: 8px 6px;
+    min-height: 38px;
+  }
+  
+  /* Sembunyikan teks, tampilkan ikon saja di mobile kecil */
+  @media (max-width: 480px) {
+    .grid-btn span:not(.icon-only) {
+      display: none;
+    }
+    
+    .grid-btn .icon-only {
+      display: inline;
+      font-size: 1.1rem;
+    }
+    
+    .button-grid {
+      gap: 4px;
+    }
+    
+    .grid-btn {
+      padding: 10px;
+    }
+  }
+}
+
+/* Pastikan player controls tidak overflow */
+.player-controls-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+}
+  </style>
+</head>
+<body class="text-white font-sans p-4 bg-black/70">
+  <header class="max-w-5xl mx-auto">
+    <h1 class="text-2xl font-bold mb-1">Barra Fvnky Remix Store</h1>
+    <p class="mb-6">List FLM Beserta Harga Ada Di Bawah</p>
+    <div class="flex justify-center mt-2 mb-4">
+      <img src="https://files.catbox.moe/c19fgo.JPG " alt="Logo Barra Fvnky Remix Store" class="w-20 h-20 rounded-full ring-2 ring-[#0FFCBE]/70">
+    </div>
+    <p class="mb-8 text-gray-300 italic bg-black/60 p-3 rounded">
+      FLM di bawah khusus <strong>FL Studio Mobile</strong>. Cara pasang: <span class="not-italic">langsung import ke FL Studio Mobile tanpa di-extract</span>. Jika masih bingung, silakan hubungi WA saya.
+    KALO AUDIO PAS DIPUTAR MACET HARAP DITUNGGU AJA!!!
+    </p>
+  </header>
+
+  <main class="max-w-5xl mx-auto">
+
+    <!-- POPULAR SECTION -->
+    <section id="popular-section" class="mb-6">
+        <h2 class="text-xl font-bold">🔥 Produk Populer</h2>
+        <!-- intentionally left blank per request -->
+      </div>
+    </section>
+
+    <!-- FILTER CONTROLS (diganti jadi 1 tombol filter) + CART -->
+    <div class="flex gap-2 items-center mb-4">
+      <button id="filter-toggle" class="px-3 py-2 rounded-xl bg-[#106EBE] text-white font-semibold">Filter</button>
+
+      <!-- tombol keranjang -->
+      <button id="cart-toggle" class="px-3 py-2 rounded-xl bg-[#0FFCBE] text-black font-semibold relative">
+        Keranjang
+        <span id="cart-badge" style="display:none">0</span>
+      </button>
+    </div>
+
+    <!-- FILTER PANEL (muncul ketika klik Filter) -->
+    <aside id="filter-panel" aria-hidden="true" role="dialog" aria-label="Filter produk">
+      <h4>Urutkan</h4>
+      <label><input type="radio" name="sort" value="baru"> Baru Ditambahkan</label>
+      <label><input type="radio" name="sort" value="lama"> Lama Ditambahkan</label>
+      <label><input type="radio" name="sort" value="murah"> Harga Terjangkau</label>
+      <label><input type="radio" name="sort" value="mahal"> Harga Tertinggi</label>
+
+      <hr style="border-color: rgba(255,255,255,0.06); margin:8px 0;">
+
+      <h4>Kategori</h4>
+      <label><input type="checkbox" class="filter-cat" value="slow"> Slow</label>
+      <label><input type="checkbox" class="filter-cat" value="horeg"> Horeg</label>
+      <label><input type="checkbox" class="filter-cat" value="bootleg"> Bootleg</label>
+      <label><input type="checkbox" class="filter-cat" value="indobass"> Indobass</label>
+      <label><input type="checkbox" class="filter-cat" value="FYP Tiktok"> FYP Tiktok</label>
+      <label><input type="checkbox" class="filter-cat" value="ENAFF"> ENAFF</label>
+    </aside>
+
+    <!-- CART PANEL -->
+    <aside id="cart-panel" aria-hidden="true" role="dialog" aria-label="Keranjang belanja">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <h4>Keranjang Belanja</h4>
+        <button id="close-cart" class="px-2 py-1 rounded-md bg-[#106EBE] text-sm">Tutup</button>
+      </div>
+      <div id="cart-items" class="mt-2">
+        <!-- item akan dirender di sini -->
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+        <div>
+          <div class="text-sm opacity-90">Total</div>
+          <div class="font-semibold text-lg">Rp <span id="cart-total">0</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <button id="btn-checkout" class="px-3 py-2 rounded-xl bg-[#106EBE] text-sm">Checkout</button>
+          <button id="btn-clear-cart" class="px-3 py-2 rounded-xl bg-[#ff4d6d] text-sm">Bersihkan</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- GRID CARD PRODUK -->
+    <ul id="produk-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+      <!-- NOTE: setiap li sekarang punya data-price dan data-category sesuai mapping yang kamu kirim -->
+      <!-- 1 -->
+      <li data-uid="1" data-prod-id="rully" data-price="89000" data-category="slow,FYP Tiktok" class="overlay-card bg-black/60 rounded-2xl p-3 flex gap-3 items-center shadow">
+        <img src="https://files.catbox.moe/9gqqm4.jpg" alt="FLM RULLY FVNKY" class="w-512 h-288 rounded-xl object-cover flex-shrink-0">
+        <div class="flex-1">
+          <div class="font-semibold leading-tight">FLM RULLY FVNKY</div>
+          <div class="text-sm opacity-90">💲 Rp 89.000</div>
+          <div class="mt-2 flex gap-2 items-center">
+            <button data-audio="audio1" class="play-btn px-3 py-2 rounded-xl bg-[#0FFCBE] text-black hover:bg-[#106EBE] hover:text-white transition">▶ Play Preview</button>
+            <a data-buy="rully" href="pembayaran.html?produk=FLM%20RULLY%20FVNKY" class="px-3 py-2 rounded-xl bg-[#106EBE] hover:bg-[#0FFCBE] hover:text-black font-medium transition">🛒 Beli</a>
+            <!-- tambah keranjang -->
+            <button data-cart="rully" class="add-cart-btn px-3 py-2 rounded-xl bg-[#ffd24d] text-black font-semibold">Tambah ke Keranjang</button>
+          </div>
+          <div class="player-controls-container"></div>
+        </div>
+        <audio id="audio1" src="https://raw.githubusercontent.com/muslihfvnky/Muslih-Fvnky-Market/main/Style%20Rully%20Fvnky%20Contoh.mp3" preload="metadata"></audio>
+      </li>
+
+      <!-- 2 -->
+      <li data-uid="2" data-prod-id="kondang" data-price="84500" data-category="slow" class="overlay-card bg-black/60 rounded-2xl p-3 flex gap-3 items-center shadow">
+        <img src="https://files.catbox.moe/9gqqm4.jpg" alt="FLM Kondang" class="w-512 h-288 rounded-xl object-cover flex-shrink-0">
+        <div class="flex-1">
+          <div class="font-semibold leading-tight">FLM KONDANG</div>
+          <div class="text-sm opacity-90">💲 Rp 84.500</div>
+          <div class="mt-2 flex gap-2 items-center">
+            <button data-audio="audio2" class="play-btn px-3 py-2 rounded-xl bg-[#0FFCBE] text-black hover:bg-[#106EBE] hover:text-white transition">▶ Play Preview</button>
+            <a data-buy="kondang" href="pembayaran.html?produk=FLM%20KONDANG" class="px-3 py-2 rounded-xl bg-[#106EBE] hover:bg-[#0FFCBE] hover:text-black font-medium transition">🛒 Beli</a>
+            <button data-cart="kondang" class="add-cart-btn px-3 py-2 rounded-xl bg-[#ffd24d] text-black font-semibold">Tambah ke Keranjang</button>
+          </div>
+          <div class="player-controls-container"></div>
+        </div>
+        <audio id="audio2" src="https://raw.githubusercontent.com/muslihfvnky/Muslih-Fvnky-Market/main/Style%20Kondang%20Contoh.mp3" preload="metadata"></audio>
+      </li>
+    </ul>
+  </main>
+  
+  <!-- SECTION KHUSUS: REQUEST FLM -->
+    <section id="request-flm-section" class="mb-8">
+      <h2 class="text-xl font-bold mb-3">🔥 Request FLM Khusus</h2>
+
+      <div class="special-card overlay-card rounded-2xl p-3 flex gap-3 items-center shadow mb-2">
+        <img src="https://files.catbox.moe/c19fgo.JPG" alt="REQUEST FLM!!" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+        <div class="flex-1">
+          <div class="flex items-center">
+            <div class="font-semibold leading-tight text-lg">REQUEST FLM!!</div>
+            <span class="special-badge">Custom</span>
+          </div>
+          <div class="text-sm opacity-90 mt-1">💲 80K – 115K</div>
+          <p class="text-sm text-gray-300 mt-2">Butuh custom beat / style sesuai request? Klik tombol Request untuk isi detail dan harga estimasi.</p>
+          <div class="mt-3 flex gap-2 items-center">
+            <a href="request-flm.html?produk=REQUEST%20FLM!!" class="px-3 py-2 rounded-xl bg-[#106EBE] hover:bg-[#0FFCBE] hover:text-black font-medium transition">🛒 Request / Beli</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <footer class="max-w-5xl mx-auto mt-10 text-xs text-gray-300 border-t border-[#0FFCBE] pt-4 bg-black/50 p-2 rounded">
+    © 2025 Muslih Fvnky Shop. All rights reserved.
+  </footer>
+
+  <script>
+    // === durationMap: durasi yang kamu kirim (detik) ===
+    const durationMap = {
+      audio1: 51,
+      audio2: 23,
+      audio4: 13,
+      audio5: 69,
+      audio6: 60,
+      audio7: 30,
+      audio8: 37,
+      audio9: 59,
+      audio10: 51,
+      audio11: 49,
+      audio12: 53,
+      audio13: 44,
+      audio14: 46,
+      audio15: 28,
+      audio16: 83,
+      audio17: 46,
+      audio18: 38,
+      audio19: 32,
+      audio20: 34,
+      audio21: 24,
+      audio22: 22,
+      audio23: 32,
+      audio24: 29,
+      audio25: 49,
+      audio26: 35,
+      audio27: 44,
+      audio28: 99,
+      audio29: 305,
+      audio30: 224,
+      audio31:44,
+      audio32:313,
+      audio33:36,
+      audio34:125,
+      audio35:276,
+      audio36:123,
+      audio37:209,
+      audio39:94,
+      audio40:126,
+      audio41:53,
+      audio42:145,
+      audio43:63,
+      audio44:119,
+      audio45:59
+    };
+
+    // Helper: format seconds -> mm:ss
+    function formatTime(sec) {
+      if (isNaN(sec) || sec === Infinity) return '0:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return m + ':' + (s < 10 ? '0' + s : s);
+    }
+
+    // Create player controls markup inside container for each card
+    function createControls(container, audio) {
+      let existing = container.querySelector('.player-controls');
+      if (existing) return existing;
+
+      const controls = document.createElement('div');
+      controls.className = 'player-controls';
+      controls.innerHTML = `
+        <button class="skip-btn" data-skip="-3" title="Mundur 3 detik">3s</button>
+        <span class="time current">0:00</span>
+        <input type="range" class="progress" min="0" max="100" value="0" step="0.1">
+        <span class="time duration">0:00</span>
+        <button class="skip-btn" data-skip="3" title="Maju 3 detik">3s</button>
+      `;
+      container.appendChild(controls);
+
+      const progress = controls.querySelector('.progress');
+      const currentTimeEl = controls.querySelector('.current');
+      const durationEl = controls.querySelector('.duration');
+      const skipButtons = controls.querySelectorAll('.skip-btn');
+
+      const known = durationMap[audio.id];
+      if (known && typeof known === 'number' && known > 0) {
+        durationEl.textContent = formatTime(known);
+        progress.max = known;
+        progress.style.background = `linear-gradient(90deg, #0FFCBE 0%, rgba(255,255,255,0.12) 0%)`;
+      }
+
+      audio.addEventListener('loadedmetadata', () => {
+        if (!known || isNaN(known)) {
+          if (!isNaN(audio.duration) && audio.duration > 0) {
+            durationEl.textContent = formatTime(audio.duration);
+            progress.max = audio.duration;
+          }
+        } else {
+          progress.max = known;
+        }
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        if (!isNaN(audio.currentTime)) {
+          const total = (known && !isNaN(known)) ? known : (isNaN(audio.duration) ? 0 : audio.duration);
+          const current = Math.min(audio.currentTime, total || audio.currentTime);
+          progress.value = current;
+          const pct = (total > 0) ? (current / total) * 100 : 0;
+          progress.style.background = `linear-gradient(90deg, #0FFCBE ${pct}%, rgba(255,255,255,0.12) ${pct}%)`;
+          currentTimeEl.textContent = formatTime(current);
+        }
+      });
+
+      audio.addEventListener('ended', () => {
+        progress.value = 0;
+        currentTimeEl.textContent = '0:00';
+        progress.style.background = `linear-gradient(90deg, #0FFCBE 0%, rgba(255,255,255,0.12) 0%)`;
+      });
+
+      progress.addEventListener('input', (e) => {
+        const val = parseFloat(e.target.value);
+        const total = (known && !isNaN(known)) ? known : (isNaN(audio.duration) ? null : audio.duration);
+        if (total !== null) {
+          const newTime = Math.max(0, Math.min(total, val));
+          audio.currentTime = newTime;
+          currentTimeEl.textContent = formatTime(newTime);
+          const pct = (total > 0) ? (newTime / total) * 100 : 0;
+          progress.style.background = `linear-gradient(90deg, #0FFCBE ${pct}%, rgba(255,255,255,0.12) ${pct}%)`;
+        } else {
+          audio.currentTime = val;
+          currentTimeEl.textContent = formatTime(val);
+        }
+      });
+
+      skipButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const skip = parseFloat(btn.getAttribute('data-skip')) || 0;
+          if (isNaN(skip) || skip === 0) return;
+          const total = (known && !isNaN(known)) ? known : (isNaN(audio.duration) ? null : audio.duration);
+          let newTime = audio.currentTime + skip;
+          if (total !== null) {
+            newTime = Math.max(0, Math.min(total, newTime));
+          } else {
+            newTime = Math.max(0, newTime);
+          }
+          audio.currentTime = newTime;
+          progress.value = newTime;
+          currentTimeEl.textContent = formatTime(newTime);
+          const pct = (total && total > 0) ? (newTime / total) * 100 : 0;
+          progress.style.background = `linear-gradient(90deg, #0FFCBE ${pct}%, rgba(255,255,255,0.12) ${pct}%)`;
+        });
+      });
+
+      return controls;
+    }
+
+    // Utility to pause all audios except the one provided
+    function pauseOthers(exceptAudio) {
+      const audios = document.querySelectorAll('audio');
+      audios.forEach(a => {
+        if (a !== exceptAudio) {
+          a.pause();
+        }
+      });
+      document.querySelectorAll('.play-btn').forEach(btn => {
+        const targetId = btn.getAttribute('data-audio');
+        if (!exceptAudio || targetId !== exceptAudio.id) {
+          btn.textContent = '▶ Play Preview';
+        }
+      });
+    }
+
+    // --------------------
+    // POPULARITY STORAGE
+    // --------------------
+    const POP_KEY = 'mf_popularity_v1'; // localStorage key
+
+    function loadPopularity(){
+      try {
+        return JSON.parse(localStorage.getItem(POP_KEY) || '{}');
+      } catch(e){ return {}; }
+    }
+
+    function savePopularity(obj){
+      localStorage.setItem(POP_KEY, JSON.stringify(obj));
+    }
+
+    function incrementPopularity(prodId, amount = 1){
+      if (!prodId) return;
+      const obj = loadPopularity();
+      obj[prodId] = (obj[prodId] || 0) + amount;
+      savePopularity(obj);
+      renderPopular(); // update UI immediately
+    }
+
+    function renderPopular(n = 5){
+      const grid = document.getElementById('popular-grid');
+      if (!grid) return;
+      const pop = loadPopularity();
+
+      const getItem = (id) => {
+        const li = document.querySelector(`#produk-grid > li[data-prod-id="${id}"]`);
+        if (!li) return null;
+        const title = li.querySelector('.font-semibold')?.textContent?.trim() || 'Produk';
+        const price = li.querySelector('.text-sm')?.textContent || '';
+        const img = li.querySelector('img')?.src || '';
+        const count = pop[id] || 0;
+        return { id, title, price, img, count, li };
+      };
+
+      const fixedOrder = ['rully', 'maman'];
+      const fixedItems = fixedOrder.map(getItem).filter(Boolean);
+
+      const allItems = Array.from(document.querySelectorAll('#produk-grid > li')).map(li => {
+        const id = li.getAttribute('data-prod-id') || '';
+        const title = li.querySelector('.font-semibold')?.textContent?.trim() || 'Produk';
+        const price = li.querySelector('.text-sm')?.textContent || '';
+        const img = li.querySelector('img')?.src || '';
+        const count = pop[id] || 0;
+        return { id, title, price, img, count, li };
+      }).filter(it => !fixedOrder.includes(it.id));
+
+      allItems.sort((a,b) => b.count - a.count);
+
+      const finalList = [...fixedItems, ...allItems].slice(0, Math.min(n, (fixedItems.length + allItems.length)));
+
+      grid.innerHTML = '';
+      finalList.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'popular-card';
+        card.innerHTML = `
+          <img src="${item.img}" alt="${escapeHtml(item.title)}">
+          <div class="popular-meta">
+            <div style="display:flex;gap:8px;align-items:center">
+              <div class="title">${escapeHtml(item.title)}</div>
+              <div style="margin-left:auto"><span class="popular-badge">POP</span></div>
+            </div>
+            <div class="price">${escapeHtml(item.price)}</div>
+            <div class="count">Pembelian: <strong>${item.count}</strong></div>
+            <div style="margin-top:8px">
+              <a href="pembayaran.html?produk=${encodeURIComponent(item.title)}" class="px-2 py-1 rounded-md bg-[#106EBE] text-sm inline-block">🛒 Beli</a>
+              <button data-preview="${item.li.querySelector('audio')?.id || ''}" class="px-2 py-1 ml-2 rounded-md bg-[#0FFCBE] text-sm text-black">▶ Preview</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function escapeHtml(s){
+      return (''+s).replace(/[&<>"']/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[m]);
+    }
+
+    // --------------------
+    // PLAY-BTN & BUY interaction wiring
+    // --------------------
+
+    // Play buttons wiring (these will attach immediately because script is after markup)
+    function wirePlayButtons(){
+      document.querySelectorAll('.play-btn').forEach(btn => {
+        btn.removeEventListener('click', btn._clicker);
+        const clicker = async function () {
+          const audioId = btn.getAttribute('data-audio');
+          const audio = document.getElementById(audioId);
+          if (!audio) return;
+
+          const container = btn.closest('li')?.querySelector('.player-controls-container') || btn.closest('div')?.querySelector('.player-controls-container');
+          if (!container) return;
+
+          createControls(container, audio);
+          pauseOthers(audio);
+
+          if (audio.paused) {
+            try {
+              await audio.play();
+              btn.textContent = '⏸ Pause Preview';
+            } catch (err) {
+              console.warn('play failed', err);
+              alert('Audio tidak bisa diputar otomatis. Silakan tekan lagi untuk memulai.');
+              return;
+            }
+          } else {
+            audio.pause();
+            btn.textContent = '▶ Play Preview';
+          }
+
+          const controls = container.querySelector('.player-controls');
+          const progress = controls.querySelector('.progress');
+
+          audio.onended = () => {
+            btn.textContent = '▶ Play Preview';
+            progress.value = 0;
+            progress.style.background = `linear-gradient(90deg, #0FFCBE 0%, rgba(255,255,255,0.12) 0%)`;
+          };
+        };
+        btn.addEventListener('click', clicker);
+        btn._clicker = clicker;
+      });
+    }
+
+    // Buy links: increment popularity by 1 AND set single-item keranjang when clicked (so pembayaran.html picks it)
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[data-buy]');
+      if (a) {
+        const id = a.getAttribute('data-buy');
+        if (id) incrementPopularity(id, 1);
+
+        // prepare single-item cart for langsung beli
+        const li = document.querySelector(`#produk-grid > li[data-prod-id="${id}"]`);
+        if (li) {
+          const name = li.querySelector('.font-semibold')?.textContent?.trim() || id;
+          const price = Number(li.dataset.price || li.getAttribute('data-price') || 0);
+          const single = [{ id, nama: name, harga: price, qty: 1 }];
+          localStorage.setItem('keranjang', JSON.stringify(single));
+        }
+        // allow navigation to pembayaran.html as link is natural
+      }
+    });
+
+    // preview buttons in popular section (delegated)
+    document.getElementById('popular-grid').addEventListener('click', (e) => {
+      const pb = e.target.closest('button[data-preview]');
+      if (!pb) return;
+      const aid = pb.getAttribute('data-preview');
+      if (!aid) return;
+      const originBtn = document.querySelector(`.play-btn[data-audio="${aid}"]`);
+      if (originBtn) originBtn.click();
+    });
+
+    // --------------------
+    // FILTER / SORTING logic (baru)
+    // --------------------
+    function setupFilters() {
+      const filterToggle = document.getElementById('filter-toggle');
+      const filterPanel = document.getElementById('filter-panel');
+      const produkGrid = document.getElementById('produk-grid');
+      const allItems = Array.from(produkGrid.querySelectorAll('li'));
+      // keep original order copy
+      const originalOrder = allItems.slice();
+
+      const radios = Array.from(filterPanel.querySelectorAll('input[name="sort"]'));
+      const catChecks = Array.from(filterPanel.querySelectorAll('.filter-cat'));
+
+      function openPanel() {
+        filterPanel.style.display = 'block';
+        filterPanel.setAttribute('aria-hidden', 'false');
+      }
+      function closePanel() {
+        filterPanel.style.display = 'none';
+        filterPanel.setAttribute('aria-hidden', 'true');
+      }
+      filterToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (filterPanel.style.display === 'block') closePanel();
+        else openPanel();
+      });
+
+      // close when click outside
+      document.addEventListener('click', (e) => {
+        if (!filterPanel.contains(e.target) && e.target !== filterToggle) {
+          closePanel();
+        }
+      });
+      // keyboard esc to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closePanel();
+      });
+
+      // apply filters immediately on change
+      radios.forEach(r => r.addEventListener('change', applyFilters));
+      catChecks.forEach(c => c.addEventListener('change', applyFilters));
+
+      function applyFilters() {
+        const selectedCats = catChecks.filter(c=>c.checked).map(c=>c.value.toLowerCase());
+        const sortValue = filterPanel.querySelector('input[name="sort"]:checked')?.value || null;
+
+        // show/hide by category
+        allItems.forEach(li => {
+          const catsRaw = li.dataset.category || '';
+          const cats = catsRaw.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+          const show = selectedCats.length === 0 || selectedCats.some(sc => cats.includes(sc));
+          li.style.display = show ? '' : 'none';
+        });
+
+        // collect visible items and sort them
+        let visible = Array.from(produkGrid.querySelectorAll('li')).filter(li => li.style.display !== 'none');
+
+        if (!sortValue) {
+          // keep original order for visible items
+          visible.sort((a,b) => originalOrder.indexOf(a) - originalOrder.indexOf(b));
+        } else if (sortValue === 'baru') {
+          visible.sort((a,b) => {
+            return Number(b.dataset.uid || 0) - Number(a.dataset.uid || 0);
+          });
+        } else if (sortValue === 'lama') {
+          visible.sort((a,b) => {
+            return Number(a.dataset.uid || 0) - Number(b.dataset.uid || 0);
+          });
+        } else if (sortValue === 'murah') {
+          visible.sort((a,b) => {
+            return Number(a.dataset.price || 999999999) - Number(b.dataset.price || 999999999);
+          });
+        } else if (sortValue === 'mahal') {
+          visible.sort((a,b) => {
+            return Number(b.dataset.price || 0) - Number(a.dataset.price || 0);
+          });
+        }
+
+        // append sorted visible items (ke produkGrid) — invisible items remain but order won't matter
+        visible.forEach(li => produkGrid.appendChild(li));
+      }
+
+      // expose applyFilters for initial call if needed
+      return { applyFilters };
+    }
+
+    // --------------------
+    // CART (localStorage key: 'keranjang')
+    // --------------------
+    const CART_KEY = 'keranjang';
+
+    function loadCart(){
+      try {
+        return JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+      } catch(e){
+        return [];
+      }
+    }
+    function saveCart(cart){
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      renderCart();
+    }
+
+    function getCartCount(cart){
+      return cart.reduce((s,i)=>s + (i.qty||0), 0);
+    }
+
+    function addToCart(prodId, name, price, qty = 1){
+      const cart = loadCart();
+      const idx = cart.findIndex(it => it.id === prodId);
+      if (idx >= 0){
+        cart[idx].qty = (cart[idx].qty || 0) + qty;
+      } else {
+        cart.push({ id: prodId, nama: name, harga: Number(price), qty: qty });
+      }
+      saveCart(cart);
+    }
+
+    function removeFromCart(prodId){
+      let cart = loadCart();
+      cart = cart.filter(it => it.id !== prodId);
+      saveCart(cart);
+    }
+
+    function changeQty(prodId, newQty){
+      const cart = loadCart();
+      const idx = cart.findIndex(it => it.id === prodId);
+      if (idx >= 0){
+        cart[idx].qty = Math.max(0, Number(newQty));
+        if (cart[idx].qty === 0) cart.splice(idx,1);
+        saveCart(cart);
+      }
+    }
+
+    function clearCart(){
+      localStorage.removeItem(CART_KEY);
+      renderCart();
+    }
+
+    function renderCart(){
+      const panel = document.getElementById('cart-panel');
+      const itemsWrap = document.getElementById('cart-items');
+      const totalEl = document.getElementById('cart-total');
+      const badge = document.getElementById('cart-badge');
+
+      const cart = loadCart();
+      itemsWrap.innerHTML = '';
+      if (cart.length === 0){
+        itemsWrap.innerHTML = '<div class="text-sm opacity-80">Keranjang kosong.</div>';
+        totalEl.textContent = '0';
+        badge.style.display = 'none';
+        badge.textContent = '0';
+        return;
+      }
+
+      let total = 0;
+      cart.forEach(item => {
+        total += item.harga * (item.qty||1);
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <div class="meta">
+            <div style="font-weight:800">${escapeHtml(item.nama)}</div>
+            <div style="font-size:0.9rem;opacity:0.9">Rp ${Number(item.harga).toLocaleString()} x ${item.qty}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <div class="qty-controls">
+              <button data-inc="${item.id}" title="Tambah">+</button>
+              <button data-dec="${item.id}" title="Kurangi">-</button>
+            </div>
+            <button data-remove="${item.id}" title="Hapus" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:#ffd;">Hapus</button>
+          </div>
+        `;
+        itemsWrap.appendChild(div);
+      });
+
+      totalEl.textContent = total.toLocaleString();
+      badge.style.display = 'inline-block';
+      badge.textContent = getCartCount(cart);
+
+      // wire qty/inc/dec/remove
+      itemsWrap.querySelectorAll('button[data-inc]').forEach(b => {
+        b.addEventListener('click', () => {
+          const id = b.getAttribute('data-inc');
+          const cart = loadCart();
+          const it = cart.find(x=>x.id===id);
+          if (it){ it.qty = (it.qty||0) + 1; saveCart(cart); }
+        });
+      });
+      itemsWrap.querySelectorAll('button[data-dec]').forEach(b => {
+        b.addEventListener('click', () => {
+          const id = b.getAttribute('data-dec');
+          const cart = loadCart();
+          const it = cart.find(x=>x.id===id);
+          if (it){ it.qty = Math.max(0, (it.qty||1) - 1); if (it.qty===0) removeFromCart(id); else saveCart(cart); }
+        });
+      });
+      itemsWrap.querySelectorAll('button[data-remove]').forEach(b => {
+        b.addEventListener('click', () => {
+          const id = b.getAttribute('data-remove');
+          if (confirm('Hapus item dari keranjang?')) removeFromCart(id);
+        });
+      });
+    }
+
+    // wire add-to-cart buttons
+    function wireAddCartButtons(){
+      document.querySelectorAll('.add-cart-btn').forEach(btn => {
+        btn.removeEventListener('click', btn._cartClick);
+        const handler = (e) => {
+          const prodId = btn.getAttribute('data-cart') || btn.closest('li')?.dataset.prodId;
+          const li = document.querySelector(`li[data-prod-id="${prodId}"]`);
+          if (!li) return;
+          const name = li.querySelector('.font-semibold')?.textContent?.trim() || prodId;
+          const price = Number(li.dataset.price || li.getAttribute('data-price') || 0);
+          addToCart(prodId, name, price, 1);
+
+          // small feedback
+          btn.textContent = '✓ Ditambahkan';
+          setTimeout(()=> btn.textContent = 'Tambah ke Keranjang', 900);
+        };
+        btn.addEventListener('click', handler);
+        btn._cartClick = handler;
+      });
+    }
+
+    // Cart panel open/close
+    function setupCartPanel(){
+      const cartToggle = document.getElementById('cart-toggle');
+      const cartPanel = document.getElementById('cart-panel');
+      const closeCart = document.getElementById('close-cart');
+      const btnClear = document.getElementById('btn-clear-cart');
+      const btnCheckout = document.getElementById('btn-checkout');
+
+      cartToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (cartPanel.style.display === 'block') {
+          cartPanel.style.display = 'none';
+        } else {
+          renderCart();
+          cartPanel.style.display = 'block';
+        }
+      });
+
+      closeCart.addEventListener('click', () => cartPanel.style.display = 'none');
+
+      document.addEventListener('click', (e) => {
+        if (!cartPanel.contains(e.target) && e.target !== cartToggle) {
+          cartPanel.style.display = 'none';
+        }
+      });
+
+      btnClear.addEventListener('click', () => {
+        if (confirm('Bersihkan seluruh keranjang?')) clearCart();
+      });
+
+      // Checkout: simply open pembayaran.html (pembayaran.html akan read localStorage 'keranjang' to produce WA message)
+      btnCheckout.addEventListener('click', () => {
+        const cart = loadCart();
+        if (!cart || cart.length === 0) {
+          alert('Keranjang kosong.');
+          return;
+        }
+        // ensure stored (already stored) then navigate to pembayaran.html
+        localStorage.setItem('keranjang', JSON.stringify(cart));
+        // open pembayaran page (same tab)
+        window.location.href = 'pembayaran.html';
+      });
+    }
+
+    // when DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      // ensure default starting popularity (only set when missing)
+      const defaults = { rully: 7, maman: 5 };
+      const pop = loadPopularity();
+      let changed = false;
+      for (const k in defaults) {
+        if (!Object.prototype.hasOwnProperty.call(pop, k)) {
+          pop[k] = defaults[k];
+          changed = true;
+        }
+      }
+      if (changed) savePopularity(pop);
+
+      renderPopular(5);
+      setInterval(renderPopular, 20000);
+
+      // setup filters
+      const f = setupFilters();
+      f.applyFilters();
+
+      // wire players
+      wirePlayButtons();
+
+      // wire cart
+      wireAddCartButtons();
+      setupCartPanel();
+      renderCart();
+
+      // also wire buy links that were added dynamically (if any)
+      // (they are normal anchor links; click handler above stores single item in localStorage)
+    });
+
+    // listen to storage events (update across tabs)
+    window.addEventListener('storage', (e) => {
+      if (e.key === POP_KEY) renderPopular();
+      if (e.key === CART_KEY) renderCart();
+    });
+
+    // stop all audio when leaving page or switching tab (helps mobile)
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        document.querySelectorAll('audio').forEach(a => a.pause());
+        document.querySelectorAll('.play-btn').forEach(b => b.textContent = '▶ Play Preview');
+      }
+    });
+  </script>
+</body>
+</html>

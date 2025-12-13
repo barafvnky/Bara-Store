@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Testimoni Pelanggan – Barra Fvnky Remix Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent-grad: linear-gradient(90deg,#06b6d4,#3b82f6,#9333ea,#ec4899); }
+    .hero-card { background: rgba(0,0,0,0.45); backdrop-filter: blur(6px); border:1px solid rgba(255,255,255,0.06); }
+    .hero-title { font-family:"Poppins",system-ui; font-weight:800; color:#fff; text-shadow:0 2px 0 rgba(0,0,0,0.55),0 8px 24px rgba(2,6,23,0.45); }
+    .title-underline { height:8px; border-radius:999px; background: var(--accent-grad); width:160px; margin-top:12px; }
+    .hero-sub { color:rgba(255,255,255,0.92); }
+    .img-card img { width:100%; height:100%; object-fit:cover; transition:transform .32s ease, box-shadow .32s ease; }
+    .img-card:hover img { transform:scale(1.04); box-shadow:0 20px 40px rgba(2,6,23,0.45); }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-cyan-600 to-blue-800 text-white">
+
+  <!-- HEADER -->
+  <header class="py-12">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="hero-card rounded-3xl p-8 sm:p-10 flex flex-col items-center text-center">
+        <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl">📸 TESTIMONI PELANGGAN</h1>
+        <div class="title-underline"></div>
+        <p class="hero-sub mt-4 text-sm sm:text-base max-w-2xl">
+          Bukti transaksi & review asli dari pembeli — <span class="font-semibold">Barra Fvnky Remix Store</span>. ✨
+        </p>
+        <div class="mt-6">
+          <a href="index.html" class="px-4 py-2 rounded-full bg-white text-black font-medium shadow-md hover:scale-105 transition-transform">← Kembali ke Toko</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GALERI -->
+  <main class="max-w-6xl mx-auto px-4 pb-16">
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Gambar 1-9 dari GitHub raw link -->
+      <div class="img-card bg-white rounded-2xl overflow-hidden">
+        <img src="https://raw.githubusercontent.com/muslihfvnky/Muslih-Fvnky-Market/main/1.jpg" alt="Testimoni 1" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 mt-10 bg-black bg-opacity-10">
+    <p class="text-sm text-white/80">© 2025 Muslih Fvnky Shop — Terima kasih atas kepercayaannya.</p>
+  </footer>
+</body>
+</html>
