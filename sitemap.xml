@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Halaman utama -->
+  <url>
+    <loc>https://barrafvnkyrimex-store.my.id/</loc>
+    <lastmod>2025-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Halaman jual FLM -->
+  <url>
+    <loc>https://barrafvnkyrimex-store.my.id/jual-flm.html</loc>
+    <lastmod>2025-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Halaman pemesanan lagu -->
+  <url>
+    <loc>https://barrafvnkyrimex-store.my.id/pemesanan-lagu.html</loc>
+    <lastmod>2025-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Halaman jasa mixing -->
+  <url>
+    <loc>https://barrafvnkyrimex-store.my.id/jasa-mixing.html</loc>
+    <lastmod>2025-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Halaman jasa chord -->
+  <url>
+    <loc>https://barrafvnkyrimex-store.my.id/jasa-chord-dan-bpm.html</loc>
+    <lastmod>2025-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Halaman testimoni -->
+  <url>
+    <loc>https://barrafvnkyrimex-store.my.id/testimoni.html</loc>
+    <lastmod>2025-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Halaman pembayaran -->
+  <url>
+    <loc>https://barrafvnkyrimex-store.my.id/pembayaran2.html</loc>
+    <lastmod>2025-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
