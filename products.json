@@ -1,0 +1,29 @@
+[
+  {
+    "uid": 1,
+    "id": "rully",
+    "nama": "FLM RULLY FVNKY",
+    "harga": 89000,
+    "kategori": ["slow", "FYP Tiktok"],
+    "gambar": "https://files.catbox.moe/9gqqm4.jpg",
+    "audio": "https://raw.githubusercontent.com/muslihfvnky/Muslih-Fvnky-Market/main/Style%20Rully%20Fvnky%20Contoh.mp3"
+  },
+  {
+    "uid": 2,
+    "id": "kondang",
+    "nama": "FLM KONDANG",
+    "harga": 84500,
+    "kategori": ["slow"],
+    "gambar": "https://files.catbox.moe/9gqqm4.jpg",
+    "audio": "https://raw.githubusercontent.com/muslihfvnky/Muslih-Fvnky-Market/main/Style%20Kondang%20Contoh.mp3"
+  },
+  {
+    "uid": 3,
+    "id": "DROP BBHC",
+    "nama": "FLM BBHC",
+    "harga": 84500,
+    "kategori": ["DROP"],
+    "gambar": "https://files.catbox.moe/9gqqm4.jpg",
+    "audio": "https://files.catbox.moe/howe21.mp3"
+  }
+]
