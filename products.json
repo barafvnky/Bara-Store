@@ -19,7 +19,7 @@
   },
   {
     "uid": 3,
-    "id": "DROP BBHC",
+    "id": "drop-bbhc",
     "nama": "FLM BBHC",
     "harga": 84500,
     "kategori": ["DROP"],
