@@ -76,6 +76,7 @@
       align-items: center;
       gap: 8px;
       margin-top: 10px;
+      flex-wrap: wrap;
     }
     .player-controls .time {
       min-width: 48px;
@@ -92,6 +93,8 @@
       background: linear-gradient(90deg, #0FFCBE 0%, rgba(15,110,190,0.25) 0%);
       outline: none;
       cursor: pointer;
+      flex-grow: 1;
+      min-width: 100px;
     }
     /* track in Firefox */
     .player-controls .progress::-moz-range-track {
@@ -142,6 +145,22 @@
     .skip-btn:hover {
       background: #0FFCBE;
       color: #001827;
+    }
+
+    /* Audio loading indicator */
+    .audio-loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #0FFCBE;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
     /* Popular section styles */
@@ -210,6 +229,13 @@
     .cart-item .meta { flex:1; }
     .qty-controls button { padding:4px 8px; border-radius:6px; background:#0FFCBE; color:#001827; font-weight:700; margin-left:6px; }
 
+    /* PERBAIKAN UTAMA: Container tombol audio */
+    .player-controls-container {
+      width: 100%;
+      margin-top: 10px;
+      min-height: 40px;
+    }
+
     /* small responsive tweak */
     @media (max-width: 480px) {
       .player-controls .time { min-width: 40px; font-size: 0.75rem; }
@@ -222,177 +248,144 @@
     }
     
     /* ===== PERBAIKAN LAYOUT TOMBOL ===== */
+    #produk-grid li {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 16px;
+    }
 
-/* Container utama kartu produk - FIXED */
-#produk-grid li {
-  display: flex;
-  flex-direction: column; /* Ubah ke kolom agar lebih mudah kontrol */
-  gap: 12px;
-  padding: 16px;
-}
+    .product-content-wrapper {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
 
-/* Container gambar dan konten */
-.product-content-wrapper {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
+    .product-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
 
-/* Gambar produk - ukuran fixed */
-.product-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 10px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
+    .product-text-content {
+      flex: 1;
+      min-width: 0;
+    }
 
-/* Konten teks - mengambil sisa space */
-.product-text-content {
-  flex: 1;
-  min-width: 0; /* Penting: mencegah overflow */
-}
+    .product-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: white;
+      margin-bottom: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
-/* Nama produk - ellipsis jika terlalu panjang */
-.product-title {
-  font-weight: 800;
-  font-size: 1rem;
-  color: white;
-  margin-bottom: 4px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+    .product-price {
+      color: #0FFCBE;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
 
-/* Harga */
-.product-price {
-  color: #0FFCBE;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-}
+    .product-buttons-container {
+      margin-top: 8px;
+      width: 100%;
+    }
 
-/* ===== CONTAINER TOMBOL YANG RAPIH ===== */
-.product-buttons-container {
-  margin-top: 8px;
-  width: 100%;
-}
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      width: 100%;
+    }
 
-/* Grid untuk tombol - SOLUSI UTAMA */
-.button-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  width: 100%;
-}
+    .grid-btn {
+      padding: 10px 8px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      text-align: center;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 42px;
+    }
 
-/* Atau alternatif flexbox yang lebih aman */
-.button-flex {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 8px;
-  width: 100%;
-  overflow: hidden; /* Pastikan tidak overflow */
-}
+    .btn-play {
+      background: linear-gradient(135deg, #0FFCBE, #0BC9AD);
+      color: #001827;
+    }
 
-/* Tombol dalam container grid */
-.grid-btn {
-  padding: 10px 8px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  text-align: center;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-height: 42px;
-}
+    .btn-buy {
+      background: linear-gradient(135deg, #106EBE, #0A5CA3);
+      color: white;
+    }
 
-/* Warna tombol */
-.btn-play {
-  background: linear-gradient(135deg, #0FFCBE, #0BC9AD);
-  color: #001827;
-}
+    .btn-cart {
+      background: linear-gradient(135deg, #FFD24D, #FFB84D);
+      color: #001827;
+    }
 
-.btn-buy {
-  background: linear-gradient(135deg, #106EBE, #0A5CA3);
-  color: white;
-}
+    .grid-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-.btn-cart {
-  background: linear-gradient(135deg, #FFD24D, #FFB84D);
-  color: #001827;
-}
-
-/* Hover effects */
-.grid-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-/* Untuk tombol dengan ikon saja di mobile */
-.grid-btn .icon-only {
-  display: none;
-}
-
-/* ===== RESPONSIVE FIXES ===== */
-@media (max-width: 640px) {
-  /* Layout kartu lebih kompak */
-  #produk-grid li {
-    padding: 12px;
-  }
-  
-  .product-image {
-    width: 70px;
-    height: 70px;
-  }
-  
-  /* Tombol lebih kecil di mobile */
-  .button-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-  }
-  
-  .grid-btn {
-    font-size: 0.8rem;
-    padding: 8px 6px;
-    min-height: 38px;
-  }
-  
-  /* Sembunyikan teks, tampilkan ikon saja di mobile kecil */
-  @media (max-width: 480px) {
-    .grid-btn span:not(.icon-only) {
+    .grid-btn .icon-only {
       display: none;
     }
-    
-    .grid-btn .icon-only {
-      display: inline;
-      font-size: 1.1rem;
-    }
-    
-    .button-grid {
-      gap: 4px;
-    }
-    
-    .grid-btn {
-      padding: 10px;
-    }
-  }
-}
 
-/* Pastikan player controls tidak overflow */
-.player-controls-container {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 10px;
-}
+    @media (max-width: 640px) {
+      #produk-grid li {
+        padding: 12px;
+      }
+      
+      .product-image {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .button-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+      }
+      
+      .grid-btn {
+        font-size: 0.8rem;
+        padding: 8px 6px;
+        min-height: 38px;
+      }
+      
+      @media (max-width: 480px) {
+        .grid-btn span:not(.icon-only) {
+          display: none;
+        }
+        
+        .grid-btn .icon-only {
+          display: inline;
+          font-size: 1.1rem;
+        }
+        
+        .button-grid {
+          gap: 4px;
+        }
+        
+        .grid-btn {
+          padding: 10px;
+        }
+      }
+    }
   </style>
 </head>
 <body class="text-white font-sans p-4 bg-black/70">
@@ -400,11 +393,11 @@
     <h1 class="text-2xl font-bold mb-1">Barra Fvnky Remix Store</h1>
     <p class="mb-6">List FLM Beserta Harga Ada Di Bawah</p>
     <div class="flex justify-center mt-2 mb-4">
-      <img src="https://files.catbox.moe/c19fgo.JPG " alt="Logo Barra Fvnky Remix Store" class="w-20 h-20 rounded-full ring-2 ring-[#0FFCBE]/70">
+      <img src="https://files.catbox.moe/c19fgo.JPG" alt="Logo Barra Fvnky Remix Store" class="w-20 h-20 rounded-full ring-2 ring-[#0FFCBE]/70">
     </div>
     <p class="mb-8 text-gray-300 italic bg-black/60 p-3 rounded">
       FLM di bawah khusus <strong>FL Studio Mobile</strong>. Cara pasang: <span class="not-italic">langsung import ke FL Studio Mobile tanpa di-extract</span>. Jika masih bingung, silakan hubungi WA saya.
-    KALO AUDIO PAS DIPUTAR MACET HARAP DITUNGGU AJA!!!
+      KALO AUDIO PAS DIPUTAR MACET HARAP DITUNGGU AJA!!!
     </p>
   </header>
 
@@ -413,11 +406,11 @@
     <!-- POPULAR SECTION -->
     <section id="popular-section" class="mb-6">
         <h2 class="text-xl font-bold">🔥 Produk Populer</h2>
-        <!-- intentionally left blank per request -->
+        <div id="popular-grid"></div>
       </div>
     </section>
 
-    <!-- FILTER CONTROLS (diganti jadi 1 tombol filter) + CART -->
+    <!-- FILTER CONTROLS + CART -->
     <div class="flex gap-2 items-center mb-4">
       <button id="filter-toggle" class="px-3 py-2 rounded-xl bg-[#106EBE] text-white font-semibold">Filter</button>
 
@@ -473,7 +466,7 @@
       <!-- Produk Yang Di Jual -->
       <!-- 1 -->
       <li data-uid="1" data-prod-id="rully" data-price="89000" data-category="slow,FYP Tiktok" class="overlay-card bg-black/60 rounded-2xl p-3 flex gap-3 items-center shadow">
-        <img src="https://files.catbox.moe/y2c5fz.jpg" alt="FLM RULLY FVNKY" class="w-512 h-288 rounded-xl object-cover flex-shrink-0">
+        <img src="https://files.catbox.moe/9gqqm4.jpg" alt="FLM RULLY FVNKY" class="w-512 h-288 rounded-xl object-cover flex-shrink-0">
         <div class="flex-1">
           <div class="font-semibold leading-tight">FLM RULLY FVNKY</div>
           <div class="text-sm opacity-90">💲 Rp 89.000</div>
@@ -584,6 +577,9 @@
         progress.value = 0;
         currentTimeEl.textContent = '0:00';
         progress.style.background = `linear-gradient(90deg, #0FFCBE 0%, rgba(255,255,255,0.12) 0%)`;
+        // Reset tombol play ke state awal
+        const playBtn = container.closest('li').querySelector('.play-btn');
+        if (playBtn) playBtn.textContent = '▶ Play Preview';
       });
 
       progress.addEventListener('input', (e) => {
@@ -629,20 +625,56 @@
       audios.forEach(a => {
         if (a !== exceptAudio) {
           a.pause();
+          a.currentTime = 0;
         }
       });
+      
+      // Reset semua tombol play kecuali yang sedang aktif
       document.querySelectorAll('.play-btn').forEach(btn => {
         const targetId = btn.getAttribute('data-audio');
         if (!exceptAudio || targetId !== exceptAudio.id) {
           btn.textContent = '▶ Play Preview';
+          btn.style.backgroundColor = '';
         }
+      });
+    }
+
+    // Fungsi untuk preload audio dengan error handling
+    function preloadAudios() {
+      document.querySelectorAll('audio').forEach(audio => {
+        audio.preload = 'metadata';
+        
+        audio.addEventListener('error', function(e) {
+          console.error('Error loading audio:', audio.src, e);
+          const btn = document.querySelector(`.play-btn[data-audio="${audio.id}"]`);
+          if (btn) {
+            btn.textContent = '❌ Error';
+            btn.style.backgroundColor = '#ff4d6d';
+            btn.disabled = true;
+          }
+        });
+        
+        audio.addEventListener('loadstart', function() {
+          const btn = document.querySelector(`.play-btn[data-audio="${audio.id}"]`);
+          if (btn && btn.textContent !== '⏸ Pause Preview') {
+            btn.innerHTML = '<span class="audio-loading"></span> Loading...';
+          }
+        });
+        
+        audio.addEventListener('canplaythrough', function() {
+          const btn = document.querySelector(`.play-btn[data-audio="${audio.id}"]`);
+          if (btn && btn.textContent.includes('Loading')) {
+            btn.textContent = '▶ Play Preview';
+            btn.style.backgroundColor = '';
+          }
+        });
       });
     }
 
     // --------------------
     // POPULARITY STORAGE
     // --------------------
-    const POP_KEY = 'mf_popularity_v1'; // localStorage key
+    const POP_KEY = 'mf_popularity_v1';
 
     function loadPopularity(){
       try {
@@ -659,7 +691,7 @@
       const obj = loadPopularity();
       obj[prodId] = (obj[prodId] || 0) + amount;
       savePopularity(obj);
-      renderPopular(); // update UI immediately
+      renderPopular();
     }
 
     function renderPopular(n = 5){
@@ -721,47 +753,85 @@
     }
 
     // --------------------
-    // PLAY-BTN & BUY interaction wiring
+    // FIXED PLAY-BUTTONS WIRING - PERBAIKAN UTAMA
     // --------------------
-
-    // Play buttons wiring
     function wirePlayButtons(){
       document.querySelectorAll('.play-btn').forEach(btn => {
-        btn.removeEventListener('click', btn._clicker);
+        // Hapus event listener lama jika ada
+        if (btn._clicker) {
+          btn.removeEventListener('click', btn._clicker);
+        }
+        
         const clicker = async function () {
           const audioId = btn.getAttribute('data-audio');
           const audio = document.getElementById(audioId);
-          if (!audio) return;
+          if (!audio) {
+            console.error('Audio element not found:', audioId);
+            return;
+          }
 
-          const container = btn.closest('li')?.querySelector('.player-controls-container') || btn.closest('div')?.querySelector('.player-controls-container');
-          if (!container) return;
+          const container = btn.closest('li')?.querySelector('.player-controls-container');
+          if (!container) {
+            console.error('Player container not found');
+            return;
+          }
 
+          // Buat controls jika belum ada
           createControls(container, audio);
+          
+          // Pause semua audio lainnya
           pauseOthers(audio);
 
           if (audio.paused) {
             try {
+              // Set volume default
+              audio.volume = 0.7;
+              
+              // Coba play audio
               await audio.play();
               btn.textContent = '⏸ Pause Preview';
+              btn.style.backgroundColor = '#106EBE';
+              btn.style.color = 'white';
+              
             } catch (err) {
-              console.warn('play failed', err);
-              alert('Audio tidak bisa diputar otomatis. Silakan tekan lagi untuk memulai.');
+              console.warn('Play failed:', err);
+              
+              // Handling untuk berbagai jenis error
+              if (err.name === 'NotAllowedError') {
+                // User belum berinteraksi dengan page
+                alert('Browser membutuhkan interaksi pengguna terlebih dahulu. Klik tombol "Play Preview" sekali lagi.');
+              } else if (err.name === 'AbortError') {
+                alert('Pemutaran audio dibatalkan. Coba lagi.');
+              } else {
+                alert('Gagal memutar audio. Cek koneksi atau file audio.');
+              }
+              btn.textContent = '▶ Play Preview';
+              btn.style.backgroundColor = '';
               return;
             }
           } else {
+            // Jika sedang playing, pause
             audio.pause();
             btn.textContent = '▶ Play Preview';
+            btn.style.backgroundColor = '';
           }
 
-          const controls = container.querySelector('.player-controls');
-          const progress = controls.querySelector('.progress');
-
+          // Setup event untuk ketika audio selesai
           audio.onended = () => {
             btn.textContent = '▶ Play Preview';
-            progress.value = 0;
-            progress.style.background = `linear-gradient(90deg, #0FFCBE 0%, rgba(255,255,255,0.12) 0%)`;
+            btn.style.backgroundColor = '';
+            const controls = container.querySelector('.player-controls');
+            if (controls) {
+              const progress = controls.querySelector('.progress');
+              if (progress) {
+                progress.value = 0;
+                progress.style.background = `linear-gradient(90deg, #0FFCBE 0%, rgba(255,255,255,0.12) 0%)`;
+              }
+            }
           };
         };
+        
+        // Attach event listener baru
         btn.addEventListener('click', clicker);
         btn._clicker = clicker;
       });
@@ -786,13 +856,20 @@
     });
 
     // preview buttons in popular section (delegated)
-    document.getElementById('popular-grid').addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
       const pb = e.target.closest('button[data-preview]');
       if (!pb) return;
       const aid = pb.getAttribute('data-preview');
       if (!aid) return;
       const originBtn = document.querySelector(`.play-btn[data-audio="${aid}"]`);
-      if (originBtn) originBtn.click();
+      if (originBtn) {
+        originBtn.click();
+        // Scroll ke produk terkait
+        const li = originBtn.closest('li');
+        if (li) {
+          li.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
     });
 
     // --------------------
@@ -803,7 +880,6 @@
       const filterPanel = document.getElementById('filter-panel');
       const produkGrid = document.getElementById('produk-grid');
       const allItems = Array.from(produkGrid.querySelectorAll('li'));
-      // keep original order copy
       const originalOrder = allItems.slice();
 
       const radios = Array.from(filterPanel.querySelectorAll('input[name="sort"]'));
@@ -817,6 +893,7 @@
         filterPanel.style.display = 'none';
         filterPanel.setAttribute('aria-hidden', 'true');
       }
+      
       filterToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         if (filterPanel.style.display === 'block') closePanel();
@@ -829,6 +906,7 @@
           closePanel();
         }
       });
+      
       // keyboard esc to close
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closePanel();
@@ -854,7 +932,6 @@
         let visible = Array.from(produkGrid.querySelectorAll('li')).filter(li => li.style.display !== 'none');
 
         if (!sortValue) {
-          // keep original order for visible items
           visible.sort((a,b) => originalOrder.indexOf(a) - originalOrder.indexOf(b));
         } else if (sortValue === 'baru') {
           visible.sort((a,b) => {
@@ -874,11 +951,12 @@
           });
         }
 
-        // append sorted visible items (ke produkGrid) — invisible items remain but order won't matter
+        // append sorted visible items
         visible.forEach(li => produkGrid.appendChild(li));
       }
 
-      // expose applyFilters for initial call if needed
+      // Initial apply
+      applyFilters();
       return { applyFilters };
     }
 
@@ -1003,25 +1081,41 @@
 
     // wire add-to-cart buttons
     function wireAddCartButtons(){
-      document.querySelectorAll('.cart-btn').forEach(btn => {
-        if (btn.hasAttribute('data-cart') || btn.closest('li')) {
+      document.querySelectorAll('.add-cart-btn').forEach(btn => {
+        // Hapus event listener lama jika ada
+        if (btn._cartClick) {
           btn.removeEventListener('click', btn._cartClick);
-          const handler = (e) => {
-            const prodId = btn.getAttribute('data-cart') || btn.closest('li')?.dataset.prodId;
-            const li = document.querySelector(`li[data-prod-id="${prodId}"]`);
-            if (!li) return;
-            const name = li.querySelector('.font-semibold')?.textContent?.trim() || prodId;
-            const price = Number(li.dataset.price || li.getAttribute('data-price') || 0);
-            addToCart(prodId, name, price, 1);
-
-            // small feedback
-            const originalText = btn.textContent;
-            btn.textContent = '✓ Ditambahkan';
-            setTimeout(()=> btn.textContent = originalText, 900);
-          };
-          btn.addEventListener('click', handler);
-          btn._cartClick = handler;
         }
+        
+        const handler = (e) => {
+          e.preventDefault();
+          const prodId = btn.getAttribute('data-cart');
+          const li = document.querySelector(`li[data-prod-id="${prodId}"]`);
+          if (!li) return;
+          
+          const name = li.querySelector('.font-semibold')?.textContent?.trim() || prodId;
+          const price = Number(li.dataset.price || li.getAttribute('data-price') || 0);
+          
+          // Tambah ke keranjang
+          addToCart(prodId, name, price, 1);
+          
+          // Feedback visual
+          const originalText = btn.textContent;
+          const originalBg = btn.style.backgroundColor;
+          btn.textContent = '✓ Ditambahkan';
+          btn.style.backgroundColor = '#4CAF50';
+          btn.style.color = 'white';
+          
+          // Reset setelah 1.5 detik
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.backgroundColor = originalBg;
+            btn.style.color = '';
+          }, 1500);
+        };
+        
+        btn.addEventListener('click', handler);
+        btn._cartClick = handler;
       });
     }
 
@@ -1037,17 +1131,23 @@
         e.stopPropagation();
         if (cartPanel.style.display === 'block') {
           cartPanel.style.display = 'none';
+          cartPanel.setAttribute('aria-hidden', 'true');
         } else {
           renderCart();
           cartPanel.style.display = 'block';
+          cartPanel.setAttribute('aria-hidden', 'false');
         }
       });
 
-      closeCart.addEventListener('click', () => cartPanel.style.display = 'none');
+      closeCart.addEventListener('click', () => {
+        cartPanel.style.display = 'none';
+        cartPanel.setAttribute('aria-hidden', 'true');
+      });
 
       document.addEventListener('click', (e) => {
         if (!cartPanel.contains(e.target) && e.target !== cartToggle) {
           cartPanel.style.display = 'none';
+          cartPanel.setAttribute('aria-hidden', 'true');
         }
       });
 
@@ -1055,23 +1155,55 @@
         if (confirm('Bersihkan seluruh keranjang?')) clearCart();
       });
 
-      // Checkout: simply open pembayaran.html
+      // Checkout
       btnCheckout.addEventListener('click', () => {
         const cart = loadCart();
         if (!cart || cart.length === 0) {
           alert('Keranjang kosong.');
           return;
         }
-        // ensure stored (already stored) then navigate to pembayaran.html
         localStorage.setItem('keranjang', JSON.stringify(cart));
-        // open pembayaran page (same tab)
         window.location.href = 'pembayaran.html';
       });
     }
 
+    // Solusi untuk autoplay policy di browser modern
+    function initializeAudioAutoplay() {
+      // Aktifkan semua audio dengan interaksi pertama
+      let userInteracted = false;
+      
+      const enableAudio = () => {
+        if (userInteracted) return;
+        userInteracted = true;
+        
+        document.querySelectorAll('audio').forEach(audio => {
+          audio.muted = false;
+          // Load semua audio
+          audio.load();
+        });
+      };
+      
+      // Deteksi interaksi pengguna pertama
+      ['click', 'touchstart', 'keydown'].forEach(eventType => {
+        document.addEventListener(eventType, enableAudio, { once: true });
+      });
+      
+      // Juga enable ketika ada klik di tombol play
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('.play-btn')) {
+          enableAudio();
+        }
+      }, { once: true });
+    }
+
     // when DOM ready
     document.addEventListener('DOMContentLoaded', () => {
-      // ensure default starting popularity (only set when missing)
+      console.log('DOM loaded, initializing...');
+      
+      // Inisialisasi audio untuk autoplay policy
+      initializeAudioAutoplay();
+      
+      // Setup popularity data default
       const defaults = { rully: 7, maman: 5 };
       const pop = loadPopularity();
       let changed = false;
@@ -1083,20 +1215,24 @@
       }
       if (changed) savePopularity(pop);
 
+      // Render popular items
       renderPopular(5);
-      setInterval(renderPopular, 20000);
-
-      // setup filters
+      
+      // Setup filters
       const f = setupFilters();
-      f.applyFilters();
-
-      // wire players
+      
+      // Wire play buttons - PERBAIKAN UTAMA
       wirePlayButtons();
-
-      // wire cart
+      
+      // Wire cart buttons
       wireAddCartButtons();
       setupCartPanel();
       renderCart();
+      
+      // Preload audios
+      preloadAudios();
+      
+      console.log('Initialization complete');
     });
 
     // listen to storage events (update across tabs)
@@ -1105,12 +1241,27 @@
       if (e.key === CART_KEY) renderCart();
     });
 
-    // stop all audio when leaving page or switching tab (helps mobile)
+    // stop all audio when leaving page or switching tab
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
-        document.querySelectorAll('audio').forEach(a => a.pause());
-        document.querySelectorAll('.play-btn').forEach(b => b.textContent = '▶ Play Preview');
+        document.querySelectorAll('audio').forEach(a => {
+          a.pause();
+          a.currentTime = 0;
+        });
+        document.querySelectorAll('.play-btn').forEach(b => {
+          b.textContent = '▶ Play Preview';
+          b.style.backgroundColor = '';
+        });
       }
+    });
+
+    // Force reload play buttons setelah semua elemen dimuat sepenuhnya
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        wirePlayButtons();
+        wireAddCartButtons();
+        console.log('Play buttons re-wired after page load');
+      }, 500);
     });
   </script>
 </body>
