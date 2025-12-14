@@ -6,15 +6,15 @@
   <title>Barra Fvnky Remix Store – Jual FLM</title>
 
   <!-- ======= SEO & Social (ditambahkan tanpa menghapus konten lain) ======= -->
-  <meta name="description" content="Daftar FLM (projek FL Studio Mobile) dari Muslih Fvnky Shop — lengkap dengan preview, harga, dan tombol pembelian. FLM siap diimport ke FL Studio Mobile. Hubungi WA untuk bantuan.">
-  <meta name="keywords" content="FLM, FL Studio Mobile, Jual FLM, Projek FLM, Barra Fvnky Store, Beat, Musik, Beli FLM" />
-  <meta name="author" content="Barra Fvnky" />
+  <meta name="description" content="Daftar FLM (projek FL Studio Mobile) dari Barra Fvnky Remix Store — lengkap dengan preview, harga, dan tombol pembelian. FLM siap diimport ke FL Studio Mobile. Hubungi WA untuk bantuan.">
+  <meta name="keywords" content="FLM, FL Studio Mobile, Jual FLM, Projek FLM, Barra Fvnky Remix Store, Beat, Musik, Beli FLM" />
+  <meta name="author" content="Barra Fvnky Store" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://barrafvnkyrimex-store.my.id/jual-flm.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Barra Fvnky Store – Jual FLM" />
-  <meta property="og:description" content="Daftar FLM (projek FL Studio Mobile) dari Barra Fvnky Store — lihat preview, harga, dan langsung beli lewat tombol pembayaran atau WA." />
+  <meta property="og:title" content="Barra Fvnky Remix Store – Jual FLM" />
+  <meta property="og:description" content="Daftar FLM (projek FL Studio Mobile) dari Barra Fvnky Remix Store — lihat preview, harga, dan langsung beli lewat tombol pembayaran atau WA." />
   <meta property="og:image" content="https://i.imgur.com/RalLvdz.jpeg" />
   <meta property="og:url" content="https://barrafvnkyrimex-store.my.id/jual-flm.html" />
   <meta property="og:type" content="website" />
@@ -220,14 +220,187 @@
       #filter-panel { right: 10px; top: 120px; width: 220px; }
       #cart-panel { right: 10px; top: 420px; width: 260px; }
     }
+    
+    /* ===== PERBAIKAN LAYOUT TOMBOL ===== */
+
+/* Container utama kartu produk - FIXED */
+#produk-grid li {
+  display: flex;
+  flex-direction: column; /* Ubah ke kolom agar lebih mudah kontrol */
+  gap: 12px;
+  padding: 16px;
+}
+
+/* Container gambar dan konten */
+.product-content-wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Gambar produk - ukuran fixed */
+.product-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Konten teks - mengambil sisa space */
+.product-text-content {
+  flex: 1;
+  min-width: 0; /* Penting: mencegah overflow */
+}
+
+/* Nama produk - ellipsis jika terlalu panjang */
+.product-title {
+  font-weight: 800;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Harga */
+.product-price {
+  color: #0FFCBE;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+/* ===== CONTAINER TOMBOL YANG RAPIH ===== */
+.product-buttons-container {
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* Grid untuk tombol - SOLUSI UTAMA */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+/* Atau alternatif flexbox yang lebih aman */
+.button-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
+  overflow: hidden; /* Pastikan tidak overflow */
+}
+
+/* Tombol dalam container grid */
+.grid-btn {
+  padding: 10px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 42px;
+}
+
+/* Warna tombol */
+.btn-play {
+  background: linear-gradient(135deg, #0FFCBE, #0BC9AD);
+  color: #001827;
+}
+
+.btn-buy {
+  background: linear-gradient(135deg, #106EBE, #0A5CA3);
+  color: white;
+}
+
+.btn-cart {
+  background: linear-gradient(135deg, #FFD24D, #FFB84D);
+  color: #001827;
+}
+
+/* Hover effects */
+.grid-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Untuk tombol dengan ikon saja di mobile */
+.grid-btn .icon-only {
+  display: none;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 640px) {
+  /* Layout kartu lebih kompak */
+  #produk-grid li {
+    padding: 12px;
+  }
+  
+  .product-image {
+    width: 70px;
+    height: 70px;
+  }
+  
+  /* Tombol lebih kecil di mobile */
+  .button-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  
+  .grid-btn {
+    font-size: 0.8rem;
+    padding: 8px 6px;
+    min-height: 38px;
+  }
+  
+  /* Sembunyikan teks, tampilkan ikon saja di mobile kecil */
+  @media (max-width: 480px) {
+    .grid-btn span:not(.icon-only) {
+      display: none;
+    }
+    
+    .grid-btn .icon-only {
+      display: inline;
+      font-size: 1.1rem;
+    }
+    
+    .button-grid {
+      gap: 4px;
+    }
+    
+    .grid-btn {
+      padding: 10px;
+    }
+  }
+}
+
+/* Pastikan player controls tidak overflow */
+.player-controls-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+}
   </style>
 </head>
 <body class="text-white font-sans p-4 bg-black/70">
   <header class="max-w-5xl mx-auto">
-    <h1 class="text-2xl font-bold mb-1">Barra Fvnky Store</h1>
+    <h1 class="text-2xl font-bold mb-1">Barra Fvnky Remix Store</h1>
     <p class="mb-6">List FLM Beserta Harga Ada Di Bawah</p>
     <div class="flex justify-center mt-2 mb-4">
-      <img src="https://i.imgur.com/aKmLD4N.png" alt="Logo Muslih Fvnky" class="w-20 h-20 rounded-full ring-2 ring-[#0FFCBE]/70">
+      <img src="https://files.catbox.moe/c19fgo.JPG " alt="Logo Barra Fvnky Remix Store" class="w-20 h-20 rounded-full ring-2 ring-[#0FFCBE]/70">
     </div>
     <p class="mb-8 text-gray-300 italic bg-black/60 p-3 rounded">
       FLM di bawah khusus <strong>FL Studio Mobile</strong>. Cara pasang: <span class="not-italic">langsung import ke FL Studio Mobile tanpa di-extract</span>. Jika masih bingung, silakan hubungi WA saya.
@@ -239,32 +412,8 @@
 
     <!-- POPULAR SECTION -->
     <section id="popular-section" class="mb-6">
-      <div class="flex items-center justify-between mb-3">
         <h2 class="text-xl font-bold">🔥 Produk Populer</h2>
         <!-- intentionally left blank per request -->
-      </div>
-      <div id="popular-grid" aria-live="polite">
-        <!-- akan di-render oleh JS -->
-      </div>
-    </section>
-
-    <!-- SECTION KHUSUS: REQUEST FLM -->
-    <section id="request-flm-section" class="mb-8">
-      <h2 class="text-xl font-bold mb-3">🔥 Request FLM Khusus</h2>
-
-      <div class="special-card overlay-card rounded-2xl p-3 flex gap-3 items-center shadow mb-2">
-        <img src="https://i.imgur.com/RalLvdz.jpeg" alt="REQUEST FLM!!" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
-        <div class="flex-1">
-          <div class="flex items-center">
-            <div class="font-semibold leading-tight text-lg">REQUEST FLM!!</div>
-            <span class="special-badge">Custom</span>
-          </div>
-          <div class="text-sm opacity-90 mt-1">💲 80K – 115K</div>
-          <p class="text-sm text-gray-300 mt-2">Butuh custom beat / style sesuai request? Klik tombol Request untuk isi detail dan harga estimasi.</p>
-          <div class="mt-3 flex gap-2 items-center">
-            <a href="request-flm.html?produk=REQUEST%20FLM!!" class="px-3 py-2 rounded-xl bg-[#106EBE] hover:bg-[#0FFCBE] hover:text-black font-medium transition">🛒 Request / Beli</a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -321,9 +470,9 @@
 
     <!-- GRID CARD PRODUK -->
     <ul id="produk-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-    
-      <!-- 𝗣𝗿𝗼𝗱𝘂𝗸 𝟭 -->
-      <li data-uid="1" data-prod-id="rully" data-price="89000" data-category="slow, FYP Tiktok" class="overlay-card bg-black/60 rounded-2xl p-3 flex gap-3 items-center shadow">
+      <!-- Produk Yang Di Jual -->
+      <!-- 1 -->
+      <li data-uid="1" data-prod-id="rully" data-price="89000" data-category="slow,FYP Tiktok" class="overlay-card bg-black/60 rounded-2xl p-3 flex gap-3 items-center shadow">
         <img src="https://files.catbox.moe/y2c5fz.jpg" alt="FLM RULLY FVNKY" class="w-512 h-288 rounded-xl object-cover flex-shrink-0">
         <div class="flex-1">
           <div class="font-semibold leading-tight">FLM RULLY FVNKY</div>
@@ -341,12 +490,33 @@
 
     </ul>
   </main>
+  
+  <!-- SECTION KHUSUS: REQUEST FLM -->
+    <section id="request-flm-section" class="mb-8">
+      <h2 class="text-xl font-bold mb-3">🔥 Request FLM Khusus</h2>
+
+      <div class="special-card overlay-card rounded-2xl p-3 flex gap-3 items-center shadow mb-2">
+        <img src="https://files.catbox.moe/c19fgo.JPG" alt="REQUEST FLM!!" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+        <div class="flex-1">
+          <div class="flex items-center">
+            <div class="font-semibold leading-tight text-lg">REQUEST FLM!!</div>
+            <span class="special-badge">Custom</span>
+          </div>
+          <div class="text-sm opacity-90 mt-1">💲 80K – 115K</div>
+          <p class="text-sm text-gray-300 mt-2">Butuh custom beat / style sesuai request? Klik tombol Request untuk isi detail dan harga estimasi.</p>
+          <div class="mt-3 flex gap-2 items-center">
+            <a href="request-flm.html?produk=REQUEST%20FLM!!" class="px-3 py-2 rounded-xl bg-[#106EBE] hover:bg-[#0FFCBE] hover:text-black font-medium transition">🛒 Request / Beli</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
   <footer class="max-w-5xl mx-auto mt-10 text-xs text-gray-300 border-t border-[#0FFCBE] pt-4 bg-black/50 p-2 rounded">
-    © 2025 Barra Fvnky Store. All rights reserved.
+    © 2025 Barra Fvnky Remix Store. All rights reserved.
   </footer>
 
-  <script>
+    <script>
     // === durationMap: durasi yang kamu kirim (detik) ===
     const durationMap = {
       audio1: 19
@@ -554,7 +724,7 @@
     // PLAY-BTN & BUY interaction wiring
     // --------------------
 
-    // Play buttons wiring (these will attach immediately because script is after markup)
+    // Play buttons wiring
     function wirePlayButtons(){
       document.querySelectorAll('.play-btn').forEach(btn => {
         btn.removeEventListener('click', btn._clicker);
@@ -597,7 +767,7 @@
       });
     }
 
-    // Buy links: increment popularity by 1 AND set single-item keranjang when clicked (so pembayaran.html picks it)
+    // Buy links: increment popularity by 1 AND set single-item keranjang when clicked
     document.addEventListener('click', (e) => {
       const a = e.target.closest('a[data-buy]');
       if (a) {
@@ -612,7 +782,6 @@
           const single = [{ id, nama: name, harga: price, qty: 1 }];
           localStorage.setItem('keranjang', JSON.stringify(single));
         }
-        // allow navigation to pembayaran.html as link is natural
       }
     });
 
@@ -627,7 +796,7 @@
     });
 
     // --------------------
-    // FILTER / SORTING logic (baru)
+    // FILTER / SORTING logic
     // --------------------
     function setupFilters() {
       const filterToggle = document.getElementById('filter-toggle');
@@ -834,22 +1003,25 @@
 
     // wire add-to-cart buttons
     function wireAddCartButtons(){
-      document.querySelectorAll('.add-cart-btn').forEach(btn => {
-        btn.removeEventListener('click', btn._cartClick);
-        const handler = (e) => {
-          const prodId = btn.getAttribute('data-cart') || btn.closest('li')?.dataset.prodId;
-          const li = document.querySelector(`li[data-prod-id="${prodId}"]`);
-          if (!li) return;
-          const name = li.querySelector('.font-semibold')?.textContent?.trim() || prodId;
-          const price = Number(li.dataset.price || li.getAttribute('data-price') || 0);
-          addToCart(prodId, name, price, 1);
+      document.querySelectorAll('.cart-btn').forEach(btn => {
+        if (btn.hasAttribute('data-cart') || btn.closest('li')) {
+          btn.removeEventListener('click', btn._cartClick);
+          const handler = (e) => {
+            const prodId = btn.getAttribute('data-cart') || btn.closest('li')?.dataset.prodId;
+            const li = document.querySelector(`li[data-prod-id="${prodId}"]`);
+            if (!li) return;
+            const name = li.querySelector('.font-semibold')?.textContent?.trim() || prodId;
+            const price = Number(li.dataset.price || li.getAttribute('data-price') || 0);
+            addToCart(prodId, name, price, 1);
 
-          // small feedback
-          btn.textContent = '✓ Ditambahkan';
-          setTimeout(()=> btn.textContent = 'Tambah ke Keranjang', 900);
-        };
-        btn.addEventListener('click', handler);
-        btn._cartClick = handler;
+            // small feedback
+            const originalText = btn.textContent;
+            btn.textContent = '✓ Ditambahkan';
+            setTimeout(()=> btn.textContent = originalText, 900);
+          };
+          btn.addEventListener('click', handler);
+          btn._cartClick = handler;
+        }
       });
     }
 
@@ -883,7 +1055,7 @@
         if (confirm('Bersihkan seluruh keranjang?')) clearCart();
       });
 
-      // Checkout: simply open pembayaran.html (pembayaran.html akan read localStorage 'keranjang' to produce WA message)
+      // Checkout: simply open pembayaran.html
       btnCheckout.addEventListener('click', () => {
         const cart = loadCart();
         if (!cart || cart.length === 0) {
@@ -925,9 +1097,6 @@
       wireAddCartButtons();
       setupCartPanel();
       renderCart();
-
-      // also wire buy links that were added dynamically (if any)
-      // (they are normal anchor links; click handler above stores single item in localStorage)
     });
 
     // listen to storage events (update across tabs)
